@@ -10,25 +10,31 @@
         <h:outputStylesheet library="style" name="mystyles.css"/>
         <title>#{msg.management}</title>
     </h:head>
-    <h:body>
-        <div>
+        <h:body class="class3">
+            <table class="class4" align="center">
+                <div align="center">
             <h1><h:outputText value="#{msg.management}" style="color: brown"/></h1>
-        </div>
-        <h:form>
+                    </div>
+        <h:form >
             <h:panelGrid columns="3">
-            <f:ajax event="change" render="booksTable">
+           
                 <h:outputText value="#{msg.sortby}"/>
+                 <f:ajax event="change" render="booksTable">
                 <h:selectOneMenu value="#{bean.sortBy}">
+                    
                     <f:selectItem itemLabel="#{msg.title}" itemValue="title"/>
                     <f:selectItem itemLabel="#{msg.category}" itemValue="category"/>
                     <f:selectItem itemLabel="#{msg.author}" itemValue="author"/>
+                     
                 </h:selectOneMenu>
                
                 <h:selectOneMenu value="#{bean.order}">
+                      
                     <f:selectItem itemLabel="#{msg.asc}" itemValue="asc"/>
                     <f:selectItem itemLabel="#{msg.desc}" itemValue="desc"/>
                 </h:selectOneMenu><p/>
-            </f:ajax>
+                </f:ajax>
+
             </h:panelGrid>              
             <f:ajax event="keyup" render="booksTable">
                 <h:outputText value="#{msg.filterby}"/>
@@ -44,9 +50,9 @@
             </f:ajax>
             
             <hr/>
-           
+            
             <h:dataTable var="book" value="#{bean.booksData}" border="1"
-                         cellpadding="3" cellspacing="3"
+                         cellpadding="3" cellspacing="3" class="class4" 
                          rowClasses="class1,class2" id="booksTable">
                 <h:column>
                     <f:facet name="header">
@@ -56,29 +62,29 @@
                     <h:inputText value="#{bean.bookData.title}" rendered="#{book.id == bean.editedId}"/>
                 </h:column>
                 <h:column>
-                    <f:facet name="header">
+                    <f:facet name="header" >
                         <h:outputText value="#{msg.description}"/>
                     </f:facet>
                     <h:outputText value="#{book.description}" rendered="#{book.id != bean.editedId}"/>
                     <h:inputText value="#{bean.bookData.description}" rendered="#{book.id == bean.editedId}"/>
                 </h:column>
                 <h:column>
-                    <f:facet name="header">
+                    <f:facet name="header" >
                         <h:outputText value="#{msg.quantity}"/>
                     </f:facet>
                     <h:outputText value="#{book.quantity}" rendered="#{book.id != bean.editedId}"/>
                     <h:inputText value="#{bean.bookData.quantity}" rendered="#{book.id == bean.editedId}"/>
                 </h:column>
                 <h:column>
-                    <f:facet name="header">
+                    <f:facet name="header" >
                         <h:outputText value="#{msg.category}"/>
                     </f:facet>
                     <h:outputText value="#{book.category}" rendered="#{book.id != bean.editedId}"/>
                     <h:inputText value="#{bean.bookData.category}" rendered="#{book.id == bean.editedId}"/>
                 </h:column>
                  <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="#{msg.author}"/>
+                     <f:facet name="header" >
+                        <h:outputText value="#{msg.author}" />
                     </f:facet>
                      <h:outputText value="#{book.author}" rendered="#{book.id != bean.editedId}"/>
                      <h:inputText value="#{bean.bookData.author}" rendered="#{book.id == bean.editedId}"/>
@@ -87,14 +93,17 @@
                     <h:commandButton value="#{msg.delete}" action="#{bean.deleteBookData(book.id)}"/>
                 </h:column>
                 <h:column>
-                    <h:commandButton value="#{msg.edit}" action="#{bean.editBookData(book)}" rendered="#{book.id != bean.editedId}"/>
+                   
+                    <h:commandButton value="#{msg.edit}" action="#{bean.editBookData(book)}" rendered="#{book.id != bean.editedId}"  />
                     <h:commandButton value="#{msg.save}" action="#{bean.updateBookData}" rendered="#{book.id == bean.editedId}"/>
+                   
                 </h:column>
             </h:dataTable>
         </h:form>
         <hr/>
         <br/>
         <h:link value="#{msg.return}" outcome="index" />
+            </table>
     </h:body>
         </f:view>
 </html>
