@@ -19,8 +19,8 @@ public class LanguageSwitcher implements Serializable {
      
     @PostConstruct
     public void init() {
-      locale = new Locale("pl");
-    //locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
+     // locale = new Locale("pl");
+    locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
     }
     public Locale getLocale() {
         return locale;
