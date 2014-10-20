@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
+ <f:view locale="#{languageSwitcher.locale}">
     <h:head>
         <title>#{msg.menu}</title>
     </h:head>
@@ -11,12 +11,14 @@
         
         <h1>#{msg.menu}</h1>
         <h:link value="#{msg.add_book}" outcome="addBook"/><br/>
-        <h:link value="#{msg.manage_books}" outcome="manageBooks"/>
+        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/>
+        <h:link value="#{msg.contact}" outcome="kontakt"/>
         <h3>#{msg.lsw}</h3>
                <h:form id="langauge_form">
                   <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" /> |
                   <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />
                </h:form>
     </h:body>
+ </f:view>
         </html>
 
