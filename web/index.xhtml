@@ -3,28 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<<<<<<< HEAD
-    <f:view locale="#{languageSwitcher.locale}">
-        <h:head>
-            <title>#{msg.menu}</title>
-        </h:head>
-        <h:body >
-            <h1>#{msg.napi}</h1>
-            <h2>#{msg.menu}</h2>
-            <h:link value="#{msg.add_book}" outcome="addBook"/><br/>
-            <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/>
-            <h:link value="#{msg.contact}" outcome="kontakt"/>
-            <h3>#{msg.lsw}</h3>
-            <h:form id="langauge_form">
-                <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" /> |
-                <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />
-            </h:form>
-            <br />
-            <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
-        </h:body>
-    </f:view>
-</html>
-=======
+
  <f:view locale="#{languageSwitcher.locale}">
     <h:head>
         <title>#{msg.menu}</title>
@@ -32,28 +11,22 @@
     <h:body >
         
         <h1 align="center">#{msg.napi}</h1>
- <table width="900px">
-            <tr>
-                <td>             
-       
+ <div>
+               
         <h2>#{msg.menu}</h2>
         <h:link value="#{msg.add_book}" outcome="addBook"/><br/>
         <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/>
         <h:link value="#{msg.contact}" outcome="kontakt"/>
-                </td>
-    
-                <td align="left">            
+             
                
         <h3>#{msg.lsw}</h3>
                <h:form id="langauge_form">
                   <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" /> |
                   <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />
                </h:form>
-         </td> 
-            </tr>
-        </table> 
+         
+        </div> 
     </h:body>
  </f:view>
         </html>
->>>>>>> origin/master
 

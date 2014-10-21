@@ -20,7 +20,23 @@ and open the template in the editor.
         </div>
             <br/>
             <hr/>
-            <h:link value="#{msg.return}" outcome="index" />
+            <!--<h:link value="#{msg.return}" outcome="index" />-->
+             <div>
+               
+        <h2>#{msg.menu}</h2>
+        <h:link value="#{msg.add_book}" outcome="addBook"/><br/>
+        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/>
+        <h:link value="#{msg.contact}" outcome="kontakt"/>
+             
+               
+        <h3>#{msg.lsw}</h3>
+               <h:form id="langauge_form">
+                  <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" /> |
+                  <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />
+               </h:form>
+         
+        </div> 
     </body>
+           
        </f:view>
 </html>
