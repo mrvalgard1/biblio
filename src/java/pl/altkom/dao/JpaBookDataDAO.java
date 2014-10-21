@@ -54,15 +54,9 @@ public class JpaBookDataDAO implements BookDataDAO {
                 + categoryConstraint +authorConstraint + sortConstraint;
 
         return em.createQuery(query, BookData.class)
-<<<<<<< HEAD
                 .setParameter("t", "%" + byTitle.toLowerCase() + "%")
                 .setParameter("c", "%" + byCategory.toLowerCase() + "%")
                 .setParameter("a", "%" + byAuthor.toLowerCase() + "%")
-=======
-                .setParameter("t", "%"+ byTitle.toLowerCase() + "%")
-                .setParameter("c", "%"+ byCategory.toLowerCase() + "%")
-                .setParameter("a", "%"+ byAuthor.toLowerCase() + "%")
->>>>>>> origin/master
                 .getResultList();
     }
 
