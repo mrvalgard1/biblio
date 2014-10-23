@@ -10,6 +10,7 @@ and open the template in the editor.
       xmlns:f="http://xmlns.jcp.org/jsf/core">
        <f:view locale="#{languageSwitcher.locale}">
     <head>
+        
         <title>#{msg.contact}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -21,12 +22,12 @@ and open the template in the editor.
             <br/>
             <hr/>
             
-             <div>
+            <div class="menu">
                
         <h2>#{msg.menu}</h2>
         <h:link value="#{msg.add_book}" outcome="addBook"/><br/>
         <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/>
-        <h:link value="#{msg.contact}" outcome="kontakt"/>
+        <h:link value="#{msg.contact}" outcome="kontakt"/><br/>
         <h:link value="#{msg.return}" outcome="index" />     
                
         <h3>#{msg.lsw}</h3>

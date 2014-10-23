@@ -8,6 +8,7 @@
     <f:view locale="#{languageSwitcher.locale}">
     <h:head>
         <title>#{msg.new_book}</title>
+        <h:outputStylesheet library="style" name="mystyles.css"/>
     </h:head>
     <h:body>
         <h1>#{msg.new_book}</h1>
@@ -31,13 +32,13 @@
         <br/>
         
         
-         <div>
+        <div class="menu">
                
         <h2>#{msg.menu}</h2>
-        <h:link value="#{msg.add_book}" outcome="addBook"/><br/>
-        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/>
-        <h:link value="#{msg.contact}" outcome="kontakt"/>
-        <h:link value="#{msg.return}" outcome="index" />     
+        <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
+        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/><hr/>
+        <h:link value="#{msg.contact}" outcome="kontakt"/><br/><hr/>
+        <h:link value="#{msg.return}" outcome="index" />     <hr/>
                
         <h3>#{msg.lsw}</h3>
                <h:form id="langauge_form">

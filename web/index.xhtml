@@ -6,17 +6,18 @@
 
  <f:view locale="#{languageSwitcher.locale}">
     <h:head>
+        <h:outputStylesheet library="style" name="mystyles.css"/>
         <title>#{msg.menu}</title>
     </h:head>
     <h:body >
         
         <h1 align="center">#{msg.napi}</h1>
- <div>
+ <div class="menu">
                
         <h2>#{msg.menu}</h2>
-        <h:link value="#{msg.add_book}" outcome="addBook"/><br/>
-        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/>
-        <h:link value="#{msg.contact}" outcome="kontakt"/>
+        <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
+        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/><hr/>
+        <h:link value="#{msg.contact}" outcome="kontakt"/><hr/>
              
                
         <h3>#{msg.lsw}</h3>
