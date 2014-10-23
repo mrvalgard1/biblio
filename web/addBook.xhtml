@@ -19,14 +19,26 @@
                 <h:outputText value="#{msg.description}"/>
                 <h:inputText value="#{bean.bookData.description}"/>
                 <h:outputText value="#{msg.quantity}"/>
-                <h:inputText value="#{bean.bookData.quantity}" />
+                <h:inputText value="#{bean.bookData.quantity}" id="terminalId"
+                    converterMessage="You should enter number for this field." >
+                    <f:convertNumber  integerOnly="true" type="number" />
+                 </h:inputText>
+                <h:message for="terminalId" id="terminalIdMsg"/>
+<!--                <p:inputText id="terminalId" value="#{bean.bookData.quantity}"
+                    required="true" requiredMessage="Please enter Terminal Id."
+                    converterMessage="You should enter number for this field.">
+                <f:convertNumber  integerOnly="true" type="number" groupingUsed="false"/>
+                </p:inputText>
+                 <p:message for="terminalId" id="terminalIdMsg"/>-->
+                 
+                 
                 <h:outputText value="#{msg.category}"/>
                 <h:inputText value="#{bean.bookData.category}" />
                  <h:outputText value="#{msg.author}"/>
                 <h:inputText id="author" value="#{bean.bookData.author}" />
                 <p:watermark for="author" value="#{msg.name}, #{msg.surname}" />
             </h:panelGrid>
-            <h:commandButton value="#{msg.save}" action="#{bean.saveBookData}"/>
+            <h:commandButton value="#{msg.save}" action="#{bean.saveBookData}" />
         </h:form>
         <hr/>
         <br/>
