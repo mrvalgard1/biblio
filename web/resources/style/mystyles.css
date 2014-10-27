@@ -25,9 +25,16 @@ background-color: #FFFF66;
     border-color: black;
     border-style: solid;
     width: 200px;
-    margin: 10px;
+   
     padding: 10px;
     background-color: #B9FF60;
+    position:absolute;
+ top:30px;
+ left:30px;
+}
+
+#body1{
+    padding-left: 270px;
 }
 
 h1 {
@@ -39,9 +46,10 @@ h1 {
     background-image: url("#{resource['images/1.jpg']}");
     
     
+    
 }
 h3{
-     background-image: url("#{resource['images/1.jpg']}");
+    padding-top: 30px;
 }
 
 .img {
