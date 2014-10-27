@@ -58,8 +58,10 @@
                
         <h3>#{msg.lsw}</h3>
                <h:form id="langauge_form">
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" /> |
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />
+                  <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" />&nbsp;
+                  <h:graphicImage value="resources/images/polish.gif" class="img"/> &nbsp;&nbsp;
+                  <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />&nbsp;
+                  <h:graphicImage value="resources/images/enf.jpg" class="img"/>
                </h:form>
          
         </div> 

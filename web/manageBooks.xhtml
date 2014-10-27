@@ -105,7 +105,7 @@
       
             </table>
             
-            <div class="menu">
+<div class="menu">
                
         <h2>#{msg.menu}</h2>
         <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
@@ -114,9 +114,11 @@
           <h:link value="#{msg.return}" outcome="index" /> <hr/>    
                
         <h3>#{msg.lsw}</h3>
-               <h:form id="langauge_form">
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" /> |
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />
+                <h:form id="langauge_form">
+                  <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" />&nbsp;
+                  <h:graphicImage value="resources/images/polish.gif" class="img"/> &nbsp;&nbsp;
+                  <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />&nbsp;
+                  <h:graphicImage value="resources/images/enf.jpg" class="img"/>
                </h:form>
          
         </div> 

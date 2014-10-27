@@ -19,7 +19,7 @@ public class JpaBookDataDAO implements BookDataDAO {
 
     @Override
     public List<BookData> getBooksData() {
-        return em.createQuery("select p from Osoba p", BookData.class).getResultList();
+        return em.createQuery("select p from BookData p", BookData.class).getResultList();
     }
 
     @Override
