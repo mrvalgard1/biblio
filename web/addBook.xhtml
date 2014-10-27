@@ -23,11 +23,7 @@
                 </h:inputText>
                 <h:message for="enterTitle" style="color: red"/>
                 
-                <h:outputText value="#{msg.description}"/>
-                <h:inputText value="#{bean.bookData.description}" id="enterDiscription" requiredMessage="#{msg.ed}" validatorMessage="#{msg.ed}" required="true">
-                    <f:validateLength minimum="3" maximum="1000" /> 
-                </h:inputText>
-                <h:message for="enterDiscription" style="color: red"/>
+                
                 
                 <h:outputText value="#{msg.quantity}"/>
                 <h:inputText value="#{bean.bookData.quantity}" id="enterNumber" converterMessage="#{msg.eqq}">
@@ -42,8 +38,17 @@
                 <h:message for="enterCategory" style="color: red"/>
                 
                  <h:outputText value="#{msg.author}"/>
-                <h:inputText id="author" value="#{bean.bookData.author}" />
-                <p:watermark for="author" value="#{msg.name}, #{msg.surname}" />
+                <h:inputText  value="#{bean.bookData.author}" id="enterAuthor" requiredMessage="#{msg.ea}" required="true">
+                    <f:validateLength minimum="1"/>
+                </h:inputText>
+                <h:message for="enterAuthor" style="color: red"/><br/>
+                <p:watermark for="enterAuthor" value="#{msg.name}, #{msg.surname}" /><br/>
+                
+                <h:outputText value="#{msg.description}"/>
+                <h:inputTextarea value="#{bean.bookData.description}"  rows="5" id="enterDiscription"  validatorMessage="#{msg.ed}" >
+                    <f:validateLength maximum="1024" /> 
+                </h:inputTextarea>
+                <h:message for="enterDiscription" style="color: red"/>
             </h:panelGrid>
             <h:commandButton value="#{msg.save}" action="#{bean.saveBookData}" />
         </h:form>

@@ -7,18 +7,6 @@
 .class2 {
     background: #CC9933;
 }
-.class3{
-background-color: #FFFF66;
-}
-
-.class4{
-    width:350px;
-    margin-bottom:20px;
-    margin-top:20px;
-   
-}
-.class5
-{background: peru}
 
 .menu{
     border: 2px;
@@ -35,6 +23,7 @@ background-color: #FFFF66;
 
 #body1{
     padding-left: 270px;
+    
 }
 
 h1 {
@@ -44,9 +33,7 @@ h1 {
     text-shadow: 4px 4px 4px #aaa;
     text-align: center;
     background-image: url("#{resource['images/1.jpg']}");
-    
-    
-    
+ 
 }
 h3{
     padding-top: 30px;
@@ -54,24 +41,10 @@ h3{
 
 .img {
     border: 1px;
-    background-color: black;
     border-style: solid;
 }
 
-/*#back{
 
-    position: relative;
-}*/
-/*#back:after{
-    position: absolute;
-    display: block;
-    content: "";
-    opacity: 0.7;
-    background-image: url("#{resource['images/lib.jpg']}");
-    background-repeat: no-repeat;
-    background-size:100%;
-    z-index: -1;
-}*/
 #back{
     background-image: url("#{resource['images/lib.jpg']}");
     background-repeat: no-repeat;
@@ -82,16 +55,3 @@ h3{
     
 }
 
-
-/*#container {
-    position: relative;
-}
-#background {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0.5; 
-    
-}*/

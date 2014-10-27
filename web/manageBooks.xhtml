@@ -10,11 +10,11 @@
         <h:outputStylesheet library="style" name="mystyles.css"/>
         <title>#{msg.management}</title>
     </h:head>
-        <h:body class="class3">
+        <h:body>
             <div id="body1"> 
-            <table class="class4" align="center">
+           
                 <div align="center">
-            <h1><h:outputText value="#{msg.management}" style="color: brown"/></h1>
+            <h1><h:outputText value="#{msg.management}"/></h1>
                     </div>
         <h:form >
             <h:panelGrid columns="3">
@@ -53,7 +53,7 @@
             <hr/>
             
             <h:dataTable var="book" value="#{bean.booksData}" border="1"
-                         cellpadding="3" cellspacing="3" class="class4" 
+                         cellpadding="3" cellspacing="3" 
                          rowClasses="class1,class2" id="booksTable">
                 <h:column>
                     <f:facet name="header">
@@ -103,8 +103,7 @@
         </h:form>
         <hr/>
         <br/>
-      
-            </table>
+     
             
 <div class="menu">
                
