@@ -13,27 +13,31 @@
     <h:body>
         <h1>#{msg.new_book}</h1>
         <h:form>
-            <h:panelGrid columns="2">
+         <h:panelGrid columns="3">
                 <h:outputText value="#{msg.title}"/>
-                <h:inputText value="#{bean.bookData.title}"/>
+                <h:inputText value="#{bean.bookData.title}" id="enterTitle" requiredMessage="#{msg.et}" required="true">
+                    <f:validateLength minimum="1"/>
+                </h:inputText>
+                <h:message for="enterTitle" style="color: red"/>
+                
                 <h:outputText value="#{msg.description}"/>
-                <h:inputText value="#{bean.bookData.description}"/>
+                <h:inputText value="#{bean.bookData.description}" id="enterDiscription" requiredMessage="#{msg.ed}" validatorMessage="#{msg.ed}" required="true">
+                    <f:validateLength minimum="3" maximum="1000" /> 
+                </h:inputText>
+                <h:message for="enterDiscription" style="color: red"/>
+                
                 <h:outputText value="#{msg.quantity}"/>
-                <h:inputText value="#{bean.bookData.quantity}" id="terminalId"
-                             converterMessage="#{msg.vmsgn}" >
-                    <f:convertNumber  integerOnly="true" type="number" />
-                 </h:inputText>
-                <h:message for="terminalId" errorStyle="color:red"/>
-<!--                <p:inputText id="terminalId" value="#{bean.bookData.quantity}"
-                    required="true" requiredMessage="Please enter Terminal Id."
-                    converterMessage="You should enter number for this field.">
-                <f:convertNumber  integerOnly="true" type="number" groupingUsed="false"/>
-                </p:inputText>
-                 <p:message for="terminalId" id="terminalIdMsg"/>-->
-                 
-                 
+                <h:inputText value="#{bean.bookData.quantity}" id="enterNumber" converterMessage="#{msg.eqq}">
+                    <f:convertNumber  integerOnly="true" type="number"  />
+                </h:inputText>
+                <h:message for="enterNumber" style="color: red"/>
+               
                 <h:outputText value="#{msg.category}"/>
-                <h:inputText value="#{bean.bookData.category}" />
+                <h:inputText value="#{bean.bookData.category}" id="enterCategory" requiredMessage="#{msg.ec}" required="true">
+                    <f:validateLength minimum="1"/>
+                </h:inputText>
+                <h:message for="enterCategory" style="color: red"/>
+                
                  <h:outputText value="#{msg.author}"/>
                 <h:inputText id="author" value="#{bean.bookData.author}" />
                 <p:watermark for="author" value="#{msg.name}, #{msg.surname}" />
