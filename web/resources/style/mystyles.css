@@ -13,31 +13,36 @@
     border-color: black;
     border-style: solid;
     width: 200px;
-   
     padding: 10px;
-    background-color: #B9FF60;
+    background-color: #02D61C;
     position:absolute;
  top:30px;
  left:30px;
 }
 
 #body1{
-    padding-left: 270px;
+    position: relative;
+    top:30px;
+ left:270px;
+    background-color: #FFDF35;
+    width: 900px;
+    padding: 10px;
+   
     
 }
 
+
 h1 {
     
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Alegreya', sans-serif;
     font-size: 50px;
     text-shadow: 4px 4px 4px #aaa;
     text-align: center;
-    background-image: url("#{resource['images/1.jpg']}");
- 
+     /*vertical-align: top;*/
+    //background-image: url("#{resource['images/1.jpg']}");
+  background-color:#02D61C; 
 }
-h3{
-    padding-top: 30px;
-}
+
 
 .img {
     border: 1px;
@@ -46,12 +51,13 @@ h3{
 
 
 #back{
-    background-image: url("#{resource['images/lib.jpg']}");
+    background-image: url("#{resource['images/tlo.jpg']}");
     background-repeat: no-repeat;
     background-size:100%;
-    height: 600px;
+    height: 900px;
     border: 1px;
     border-style: solid;
+    
     
 }
 

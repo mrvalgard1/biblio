@@ -8,9 +8,28 @@
     
     <h:head>
         <h:outputStylesheet library="style" name="mystyles.css"/>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <title>#{msg.management}</title>
     </h:head>
         <h:body>
+            <div id="back">
+                <div class="menu">
+               
+        <h2>#{msg.menu}</h2>
+        <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
+        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/><hr/>
+        <h:link value="#{msg.contact}" outcome="kontakt"/><br/><hr/>
+          <h:link value="#{msg.return}" outcome="index" /> <hr/>    
+               
+        <h3>#{msg.lsw}</h3>
+                <h:form id="langauge_form">
+                  <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" />&nbsp;
+                  <h:graphicImage value="resources/images/polish.gif" class="img"/> &nbsp;&nbsp;
+                  <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />&nbsp;
+                  <h:graphicImage value="resources/images/enf.jpg" class="img"/>
+               </h:form>
+         
+        </div> 
             <div id="body1"> 
            
                 <div align="center">
@@ -105,23 +124,8 @@
         <br/>
      
             
-<div class="menu">
-               
-        <h2>#{msg.menu}</h2>
-        <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
-        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/><hr/>
-        <h:link value="#{msg.contact}" outcome="kontakt"/><br/><hr/>
-          <h:link value="#{msg.return}" outcome="index" /> <hr/>    
-               
-        <h3>#{msg.lsw}</h3>
-                <h:form id="langauge_form">
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" />&nbsp;
-                  <h:graphicImage value="resources/images/polish.gif" class="img"/> &nbsp;&nbsp;
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />&nbsp;
-                  <h:graphicImage value="resources/images/enf.jpg" class="img"/>
-               </h:form>
-         
-        </div> 
+
+                </div>
                 </div>
     </h:body>
         </f:view>

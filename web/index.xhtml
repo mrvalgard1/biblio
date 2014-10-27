@@ -7,19 +7,13 @@
  <f:view locale="#{languageSwitcher.locale}">
     <h:head>
         <h:outputStylesheet library="style" name="mystyles.css"/>
-        <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <title>#{msg.menu}</title>
     </h:head>
      <h:body >
          
          <div id="back">
-         <div id="body1">
-                 
-             
-        <h1 align="center">#{msg.napi}</h1>
-        
-       
- <div class="menu">
+             <div class="menu">
                
         <h2>#{msg.menu}</h2>
         <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
@@ -36,6 +30,13 @@
                </h:form>
          
         </div> 
+         <div id="body1">
+                 
+             
+        <h1>#{msg.napi}</h1>
+        
+       
+ 
          </div>
              </div>
     </h:body>

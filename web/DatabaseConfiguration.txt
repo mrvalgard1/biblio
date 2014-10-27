@@ -1,0 +1,11 @@
+Table
+    Books
+        ID - INT
+        TITLE - VARCHAR
+        DESCRIPTION -   VARCHAR
+        QUANTITY -  INT
+        CATEGORY  - VARCHAR 
+        AUTHOR  - VARCHAR
+
+connectionpool- booksPool
+resources - booksData
