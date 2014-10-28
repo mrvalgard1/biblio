@@ -42,6 +42,7 @@ public class JpaBookDataDAO implements BookDataDAO {
                 .getSingleResult();
     }
 
+    
     @Override
     public List<BookData> getBooksData(String byTitle, String byCategory, String byAuthor,
             String sortBy) {

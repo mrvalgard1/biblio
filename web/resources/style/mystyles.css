@@ -25,14 +25,14 @@
     top:50px;
     left:270px;
     background-color: #FFDF35;
-    width: 900px;
+    width: auto;
     border: 2px;
     border-style: solid;
 }
 
 .body2{
     padding-left: 20px;
-    
+    padding-right: 20px;
 }
 
 .o {
@@ -51,6 +51,7 @@
     text-shadow: 4px 4px 4px #aaa;
     text-align: center;
   background-color:#02D61C; 
+  
     
 }
 
@@ -61,14 +62,28 @@
 }
 
 
-#back{
+.back{
     background-image: url("#{resource['images/tlo.jpg']}");
     background-repeat: repeat-y;
     background-size:100%;
     height: 900px;
-    border: 1px;
-    border-style: solid;
+   
     
     
 }
+
+.column1 { width: 150px; }
+.column2 { width: 50px; }
+.column3 { width: 300px; }
+/*@media screen and(min-width:800px) and (max-width:1200px){
+    o2 {
+        float: none;
+        margin:0;
+        text-align: center;
+        display: block;
+        width: auto;
+        
+    }
+}*/
+
 

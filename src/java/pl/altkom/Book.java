@@ -14,6 +14,7 @@ import pl.altkom.model.BookData;
 public class Book implements Serializable {
 
     private BookData bookData = new BookData();
+    
 
     @EJB
     private BookDataDAO dao;
