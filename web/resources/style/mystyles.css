@@ -16,31 +16,42 @@
     padding: 10px;
     background-color: #02D61C;
     position:absolute;
- top:30px;
+ top:50px;
  left:30px;
 }
 
 #body1{
-    position: relative;
-    top:30px;
- left:270px;
+    position: absolute;
+    top:50px;
+    left:270px;
     background-color: #FFDF35;
     width: 900px;
-    padding: 10px;
-   
+    border: 2px;
+    border-style: solid;
+}
+
+.body2{
+    padding-left: 20px;
     
 }
 
-
-h1 {
+.o {
     
     font-family: 'Alegreya', sans-serif;
     font-size: 50px;
     text-shadow: 4px 4px 4px #aaa;
     text-align: center;
-     /*vertical-align: top;*/
-    //background-image: url("#{resource['images/1.jpg']}");
   background-color:#02D61C; 
+  margin-bottom: 30px;
+ 
+}
+.o2{
+      font-family: 'Alegreya', sans-serif;
+    font-size: 50px;
+    text-shadow: 4px 4px 4px #aaa;
+    text-align: center;
+  background-color:#02D61C; 
+    
 }
 
 
@@ -52,7 +63,7 @@ h1 {
 
 #back{
     background-image: url("#{resource['images/tlo.jpg']}");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size:100%;
     height: 900px;
     border: 1px;
