@@ -6,82 +6,76 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:p="http://primefaces.org/ui"  >
     <f:view locale="#{languageSwitcher.locale}">
-    <h:head>
-        <title>#{msg.new_book}</title>
-        <h:outputStylesheet library="style" name="mystyles.css"/>
-        <link href='http://fonts.googleapis.com/css?family=Alegreya&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-    </h:head>
+        <h:head>
+            <title>#{msg.new_book}</title>
+            <h:outputStylesheet library="style" name="mystyles.css"/>
+            <link href='http://fonts.googleapis.com/css?family=Alegreya&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+        </h:head>
         <h:body class="back">
-        
-        
-       
-        <div class="menu">
-               
-        <h2>#{msg.menu}</h2>
-        <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
-        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/><hr/>
-        <h:link value="#{msg.contact}" outcome="kontakt"/><br/><hr/>
-        <h:link value="#{msg.return}" outcome="index" />     <hr/>
-               
-        <h3>#{msg.lsw}</h3>
-               <h:form id="langauge_form">
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" />&nbsp;
-                  <h:graphicImage value="resources/images/polish.gif" class="img"/> &nbsp;&nbsp;
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />&nbsp;
-                  <h:graphicImage value="resources/images/enf.jpg" class="img"/>
-               </h:form>
-         
-        </div> 
-        <div class="body1">
-            
-       
-            <div  class="o">#{msg.new_book}</div>
-            <div class="body2">
-        <h:form>
-         <h:panelGrid columns="3">
-                <h:outputText value="#{msg.title}"/>
-                <h:inputText value="#{bean.bookData.title}" id="enterTitle" requiredMessage="#{msg.et}" required="true">
-                    <f:validateLength minimum="1"/>
-                </h:inputText>
-                <h:message for="enterTitle" style="color: red"/>
-                
-                
-                
-                <h:outputText value="#{msg.quantity}"/>
-                <h:inputText value="#{bean.bookData.quantity}" id="enterNumber" converterMessage="#{msg.eqq}">
-                    <f:convertNumber  integerOnly="true" type="number"  />
-                </h:inputText>
-                <h:message for="enterNumber" style="color: red"/>
-               
-                <h:outputText value="#{msg.category}"/>
-                <h:inputText value="#{bean.bookData.category}" id="enterCategory" requiredMessage="#{msg.ec}" required="true">
-                    <f:validateLength minimum="1"/>
-                </h:inputText>
-                <h:message for="enterCategory" style="color: red"/>
-                
-                 <h:outputText value="#{msg.author}"/>
-                <h:inputText  value="#{bean.bookData.author}" id="enterAuthor" requiredMessage="#{msg.ea}" required="true">
-                    <f:validateLength minimum="1"/>
-                </h:inputText>
-                <h:message for="enterAuthor" style="color: red"/><br/>
-                <p:watermark for="enterAuthor" value="#{msg.name}, #{msg.surname}" /><br/>
-                
-                <h:outputText value="#{msg.description}"/>
-                <h:inputTextarea value="#{bean.bookData.description}"  cols="50" rows="5" id="enterDiscription"  validatorMessage="#{msg.ed}" >
-                    <f:validateLength maximum="1024" /> 
-                </h:inputTextarea>
-                <h:message for="enterDiscription" style="color: red"/>
-            </h:panelGrid>
-            <h:commandButton value="#{msg.save}" action="#{bean.saveBookData}" />
-        </h:form>
-       
-        <br/>
-        
-        
-      
-         </div>
+
+            <div class="menu">
+
+                <h2>#{msg.menu}</h2>
+                <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
+                <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/><hr/>
+                <h:link value="#{msg.contact}" outcome="kontakt"/><br/><hr/>
+                <h:link value="#{msg.return}" outcome="index" />     <hr/>
+
+                <h3>#{msg.lsw}</h3>
+                <h:form id="langauge_form">
+                    <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" />&nbsp;
+                    <h:graphicImage value="resources/images/polish.gif" class="img"/> &nbsp;&nbsp;
+                    <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />&nbsp;
+                    <h:graphicImage value="resources/images/enf.jpg" class="img"/>
+                </h:form>
+
+            </div> 
+            <div class="body1">
+
+
+                <div  class="o">#{msg.new_book}</div>
+                <div class="body2">
+                    <h:form>
+                        <h:panelGrid columns="3">
+                            <h:outputText value="#{msg.title}"/>
+                            <h:inputText value="#{bean.bookData.title}" id="enterTitle" requiredMessage="#{msg.et}" required="true">
+                                <f:validateLength minimum="1"/>
+                            </h:inputText>
+                            <h:message for="enterTitle" style="color: red"/>
+
+                            <h:outputText value="#{msg.quantity}"/>
+                            <h:inputText value="#{bean.bookData.quantity}" id="enterNumber" converterMessage="#{msg.eqq}">
+                                <f:convertNumber  integerOnly="true" type="number"  />
+                            </h:inputText>
+                            <h:message for="enterNumber" style="color: red"/>
+
+                            <h:outputText value="#{msg.category}"/>
+                            <h:inputText value="#{bean.bookData.category}" id="enterCategory" requiredMessage="#{msg.ec}" required="true">
+                                <f:validateLength minimum="1"/>
+                            </h:inputText>
+                            <h:message for="enterCategory" style="color: red"/>
+
+                            <h:outputText value="#{msg.author}"/>
+                            <h:inputText  value="#{bean.bookData.author}" id="enterAuthor" requiredMessage="#{msg.ea}" required="true">
+                                <f:validateLength minimum="1"/>
+                            </h:inputText>
+                            <h:message for="enterAuthor" style="color: red"/><br/>
+                            <p:watermark for="enterAuthor" value="#{msg.name}, #{msg.surname}" /><br/>
+                                
+                            <h:outputText value="#{msg.description}"/>
+                            <h:inputTextarea value="#{bean.bookData.description}"  cols="50" rows="5" id="enterDiscription"  validatorMessage="#{msg.ed}" >
+                                <f:validateLength maximum="1024" /> 
+                            </h:inputTextarea>
+                            <h:message for="enterDiscription" style="color: red"/>
+                        </h:panelGrid>
+                        <h:commandButton value="#{msg.save}" action="#{bean.saveBookData}" />
+                    </h:form>
+
+                    <br/>
+
+                </div>
             </div>
-    </h:body>
-        </f:view>
+        </h:body>
+    </f:view>
 </html>
 

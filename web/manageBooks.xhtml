@@ -5,131 +5,131 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <f:view locale="#{languageSwitcher.locale}">
-    
-    <h:head>
-        <h:outputStylesheet library="style" name="mystyles.css"/>
-        <link href='http://fonts.googleapis.com/css?family=Alegreya&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-        <title>#{msg.management}</title>
-    </h:head>
+
+        <h:head>
+            <h:outputStylesheet library="style" name="mystyles.css"/>
+            <link href='http://fonts.googleapis.com/css?family=Alegreya&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+            <title>#{msg.management}</title>
+        </h:head>
         <h:body class="back">
-            
-                <div class="menu">
-               
-        <h2>#{msg.menu}</h2>
-        <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
-        <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/><hr/>
-        <h:link value="#{msg.contact}" outcome="kontakt"/><br/><hr/>
-          <h:link value="#{msg.return}" outcome="index" /> <hr/>    
-               
-        <h3>#{msg.lsw}</h3>
+
+            <div class="menu">
+
+                <h2>#{msg.menu}</h2>
+                <h:link value="#{msg.add_book}" outcome="addBook"/><br/><hr/>
+                <h:link value="#{msg.manage_books}" outcome="manageBooks"/><br/><hr/>
+                <h:link value="#{msg.contact}" outcome="kontakt"/><br/><hr/>
+                <h:link value="#{msg.return}" outcome="index" /> <hr/>    
+
+                <h3>#{msg.lsw}</h3>
                 <h:form id="langauge_form">
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" />&nbsp;
-                  <h:graphicImage value="resources/images/polish.gif" class="img"/> &nbsp;&nbsp;
-                  <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />&nbsp;
-                  <h:graphicImage value="resources/images/enf.jpg" class="img"/>
-               </h:form>
-         
-        </div> 
+                    <h:commandLink action="#{languageSwitcher.changeLanguage('pl')}" value="Polski" />&nbsp;
+                    <h:graphicImage value="resources/images/polish.gif" class="img"/> &nbsp;&nbsp;
+                    <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="English" />&nbsp;
+                    <h:graphicImage value="resources/images/enf.jpg" class="img"/>
+                </h:form>
+
+            </div> 
             <div class="body1"> 
-           
+
                 <div class="o">
-           #{msg.management}
-                    </div>
+                    #{msg.management}
+                </div>
                 <div class="body2">
-        <h:form >
-            <h:panelGrid columns="3">
-           
-                <h:outputText value="#{msg.sortby}"/>
-                 <f:ajax event="change" render="booksTable">
-                <h:selectOneMenu value="#{bean.sortBy}">
-                    
-                    <f:selectItem itemLabel="#{msg.title}" itemValue="title"/>
-                    <f:selectItem itemLabel="#{msg.category}" itemValue="category"/>
-                    <f:selectItem itemLabel="#{msg.author}" itemValue="author"/>
-                     
-                </h:selectOneMenu>
-               
-                <h:selectOneMenu value="#{bean.order}">
-                      
-                    <f:selectItem itemLabel="#{msg.asc}" itemValue="asc"/>
-                    <f:selectItem itemLabel="#{msg.desc}" itemValue="desc"/>
-                </h:selectOneMenu><p/>
-                </f:ajax>
+                    <h:form >
+                        <h:panelGrid columns="3">
 
-            </h:panelGrid>              
-            <f:ajax event="keyup" render="booksTable">
-                <h:outputText value="#{msg.filterby}"/>
-                <h:panelGrid columns="2">  
-                    <h:outputText value="#{msg.title}"/>
-                    <h:inputText value="#{bean.byTitle}"/>
+                            <h:outputText value="#{msg.sortby}"/>
+                            <f:ajax event="change" render="booksTable">
+                                <h:selectOneMenu value="#{bean.sortBy}">
 
-                    <h:outputText value="#{msg.category}"/>
-                    <h:inputText value="#{bean.byCategory}"/>
-                    <h:outputText value="#{msg.author}"/>
-                    <h:inputText value="#{bean.byAuthor}"/>
-                </h:panelGrid>
-            </f:ajax>
-            
-            <hr/>
-            
-            <h:dataTable var="book" value="#{bean.booksData}" border="1"
-                         cellpadding="3" cellspacing="3" 
-                         rowClasses="class1,class2" id="booksTable" columnClasses="column1,column2,column1,column1,column3">
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="#{msg.title}"/>
-                    </f:facet>
-                    <h:outputText value="#{book.title}" rendered="#{book.id != bean.editedId}"/>
-                    <h:inputText value="#{bean.bookData.title}" rendered="#{book.id == bean.editedId}"/>
-                </h:column>
-                              <h:column>
-                    <f:facet name="header" >
-                        <h:outputText value="#{msg.quantity}"/>
-                    </f:facet>
-                    <h:outputText value="#{book.quantity}" rendered="#{book.id != bean.editedId}"/>
-                    <h:inputText value="#{bean.bookData.quantity}" rendered="#{book.id == bean.editedId}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header" >
-                        <h:outputText value="#{msg.category}"/>
-                    </f:facet>
-                    <h:outputText value="#{book.category}" rendered="#{book.id != bean.editedId}"/>
-                    <h:inputText value="#{bean.bookData.category}" rendered="#{book.id == bean.editedId}"/>
-                </h:column>
-                 <h:column>
-                     <f:facet name="header" >
-                        <h:outputText value="#{msg.author}" />
-                    </f:facet>
-                     <h:outputText value="#{book.author}" rendered="#{book.id != bean.editedId}"/>
-                     <h:inputText value="#{bean.bookData.author}" rendered="#{book.id == bean.editedId}"/>
-                </h:column>
-                  <h:column>
-                    <f:facet name="header" >
-                        <h:outputText value="#{msg.description}"/>
-                    </f:facet>
-                    <h:outputText value="#{book.description}" rendered="#{book.id != bean.editedId}"/>
-                    <h:inputText value="#{bean.bookData.description}" rendered="#{book.id == bean.editedId}"/>
-                </h:column>
-                <h:column>
-                    <h:commandButton value="#{msg.delete}" action="#{bean.deleteBookData(book.id)}"/>
-                </h:column>
-                <h:column>
-                   
-                    <h:commandButton value="#{msg.edit}" action="#{bean.editBookData(book)}" rendered="#{book.id != bean.editedId}"  />
-                    <h:commandButton value="#{msg.save}" action="#{bean.updateBookData}" rendered="#{book.id == bean.editedId}"/>
-                   
-                </h:column>
-            </h:dataTable>
-        </h:form>
-        
-        <br/>
-     
-            
+                                    <f:selectItem itemLabel="#{msg.title}" itemValue="title"/>
+                                    <f:selectItem itemLabel="#{msg.category}" itemValue="category"/>
+                                    <f:selectItem itemLabel="#{msg.author}" itemValue="author"/>
+
+                                </h:selectOneMenu>
+
+                                <h:selectOneMenu value="#{bean.order}">
+
+                                    <f:selectItem itemLabel="#{msg.asc}" itemValue="asc"/>
+                                    <f:selectItem itemLabel="#{msg.desc}" itemValue="desc"/>
+                                </h:selectOneMenu><p/>
+                            </f:ajax>
+
+                        </h:panelGrid>              
+                        <f:ajax event="keyup" render="booksTable">
+                            <h:outputText value="#{msg.filterby}"/>
+                            <h:panelGrid columns="2">  
+                                <h:outputText value="#{msg.title}"/>
+                                <h:inputText value="#{bean.byTitle}"/>
+
+                                <h:outputText value="#{msg.category}"/>
+                                <h:inputText value="#{bean.byCategory}"/>
+                                <h:outputText value="#{msg.author}"/>
+                                <h:inputText value="#{bean.byAuthor}"/>
+                            </h:panelGrid>
+                        </f:ajax>
+
+                        <hr/>
+
+                        <h:dataTable var="book" value="#{bean.booksData}" border="1"
+                                     cellpadding="3" cellspacing="3" 
+                                     rowClasses="class1,class2" id="booksTable" columnClasses="column1,column2,column1,column1,column3">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{msg.title}"/>
+                                </f:facet>
+                                <h:outputText value="#{book.title}" rendered="#{book.id != bean.editedId}"/>
+                                <h:inputText value="#{bean.bookData.title}" rendered="#{book.id == bean.editedId}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header" >
+                                    <h:outputText value="#{msg.quantity}"/>
+                                </f:facet>
+                                <h:outputText value="#{book.quantity}" rendered="#{book.id != bean.editedId}"/>
+                                <h:inputText value="#{bean.bookData.quantity}" rendered="#{book.id == bean.editedId}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header" >
+                                    <h:outputText value="#{msg.category}"/>
+                                </f:facet>
+                                <h:outputText value="#{book.category}" rendered="#{book.id != bean.editedId}"/>
+                                <h:inputText value="#{bean.bookData.category}" rendered="#{book.id == bean.editedId}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header" >
+                                    <h:outputText value="#{msg.author}" />
+                                </f:facet>
+                                <h:outputText value="#{book.author}" rendered="#{book.id != bean.editedId}"/>
+                                <h:inputText value="#{bean.bookData.author}" rendered="#{book.id == bean.editedId}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header" >
+                                    <h:outputText value="#{msg.description}"/>
+                                </f:facet>
+                                <h:outputText value="#{book.description}" rendered="#{book.id != bean.editedId}"/>
+                                <h:inputText value="#{bean.bookData.description}" rendered="#{book.id == bean.editedId}"/>
+                            </h:column>
+                            <h:column>
+                                <h:commandButton value="#{msg.delete}" action="#{bean.deleteBookData(book.id)}"/>
+                            </h:column>
+                            <h:column>
+
+                                <h:commandButton value="#{msg.edit}" action="#{bean.editBookData(book)}" rendered="#{book.id != bean.editedId}"  />
+                                <h:commandButton value="#{msg.save}" action="#{bean.updateBookData}" rendered="#{book.id == bean.editedId}"/>
+
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+
+                    <br/>
+
+
 
                 </div>
-                
-                </div>
-    </h:body>
-        </f:view>
+
+            </div>
+        </h:body>
+    </f:view>
 </html>
 
